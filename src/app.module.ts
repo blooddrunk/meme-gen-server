@@ -17,7 +17,7 @@ import { CanvasModule } from './canvas/canvas.module';
       typePaths: ['./**/*.graphql'],
       installSubscriptionHandlers: true,
       definitions: {
-        path: join(process.cwd(), 'src/graphql.schema.ts'),
+        path: join(process.cwd(), 'src/graphql/graphql.schema.ts'),
         outputAs: 'class',
       },
       resolvers: { JSON: GraphQLJSON },

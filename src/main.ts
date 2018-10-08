@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { TimeoutInterceptor } from './common/interceptors/timeout.interceptor';
-import { TranformInterceptor } from './common/interceptors/tranform.interceptor';
+// import { TranformInterceptor } from './common/interceptors/tranform.interceptor';
 import * as helmet from 'helmet';
 // import * as csurf from 'csurf';
 
@@ -15,7 +15,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(
     new TimeoutInterceptor(),
-    new TranformInterceptor(),
+    // new TranformInterceptor(),
   );
   await app.listen(app.get('ConfigService').port);
 }

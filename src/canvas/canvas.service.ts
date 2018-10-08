@@ -1,7 +1,7 @@
 import { Injectable, HttpService } from '@nestjs/common';
 import { map } from 'rxjs/operators';
 import { ConfigService } from '../config/config.service';
-import { RemoteImage } from '../graphql.schema';
+import { RemoteImage } from '../graphql/graphql.schema';
 
 @Injectable()
 export class CanvasService {

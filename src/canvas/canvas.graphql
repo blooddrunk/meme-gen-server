@@ -2,15 +2,5 @@ scalar JSON
 scalar Date
 
 type Query {
-  canvas: Canvas
-  randomImage: RemoteImage
-}
-
-type Canvas {
-  currentImage: RemoteImage
-}
-
-type RemoteImage {
-  id: ID!
-  url: String
+  randomImage: String
 }

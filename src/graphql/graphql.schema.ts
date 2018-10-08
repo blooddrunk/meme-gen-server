@@ -1,5 +1,5 @@
 export abstract class IQuery {
-    abstract randomImage(): JSON | Promise<JSON>;
+    abstract randomImage(): string | Promise<string>;
 
     abstract temp__(): boolean | Promise<boolean>;
 }

@@ -1,12 +1,9 @@
 import { Injectable, HttpService } from '@nestjs/common';
 import { map } from 'rxjs/operators';
 import { ConfigService } from '../config/config.service';
-import { RemoteImage } from '../graphql/graphql.schema';
 
 @Injectable()
 export class CanvasService {
-  private currentImage: RemoteImage = null;
-
   constructor(
     private readonly http: HttpService,
     private readonly config: ConfigService,
@@ -20,9 +17,5 @@ export class CanvasService {
         }`,
       )
       .pipe(map(response => response.data));
-  }
-
-  getCurrentImage() {
-    return this.currentImage;
   }
 }

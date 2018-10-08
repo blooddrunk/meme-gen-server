@@ -8,6 +8,6 @@ export class TimeoutInterceptor implements NestInterceptor {
     context: ExecutionContext,
     call$: Observable<any>,
   ): Observable<any> {
-    return call$.pipe(timeout(10 * 1000));
+    return call$.pipe(timeout(120 * 1000));
   }
 }

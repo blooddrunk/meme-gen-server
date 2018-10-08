@@ -11,9 +11,9 @@ export class ConfigService {
   private readonly envConfig: EnvConfig;
 
   constructor(filePath: string) {
-    const config = dotenv.parse(fs.readFileSync(join(process.cwd(), filePath)));
+    const config = dotenv.parse(fs.readFileSync(join(__dirname, filePath)));
     const localConfig = dotenv.parse(
-      fs.readFileSync(join(process.cwd(), '.env.local')),
+      fs.readFileSync(join(__dirname, '.env.local')),
     );
     this.envConfig = this.validateInput({ ...localConfig, ...config });
   }

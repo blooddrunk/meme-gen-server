@@ -48,7 +48,11 @@ async function bootstrap() {
       cert: fs.readFileSync(`/etc/letsencrypt/live/${domainName}/cert.pem`),
       ca: fs.readFileSync(`/etc/letsencrypt/live/${domainName}/chain.pem`),
     };
-    https.createServer(httpsOptions, server).listen(443);
+    https.createServer(httpsOptions, server).listen(443, () => {
+      if (process.send) {
+        process.send('ready');
+      }
+    });
   }
   // gracefully stop
   // process.on('SIGINT', () => {

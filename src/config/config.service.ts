@@ -28,6 +28,7 @@ export class ConfigService {
         .valid(['development', 'production', 'test', 'local'])
         .default('development'),
       PORT: Joi.number().default(3000),
+      DOMAIN_NAME: Joi.string(),
       UNSPLASH_ACCESS_KEY: Joi.string().required(),
     });
 
@@ -51,5 +52,9 @@ export class ConfigService {
 
   get unsplashAccessKey() {
     return this.envConfig.UNSPLASH_ACCESS_KEY;
+  }
+
+  get domainName() {
+    return this.envConfig.DOMAIN_NAME;
   }
 }

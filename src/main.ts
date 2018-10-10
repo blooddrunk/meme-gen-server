@@ -27,10 +27,10 @@ async function bootstrap() {
     .useGlobalInterceptors(
       new TimeoutInterceptor(),
       // new TranformInterceptor(),
-    );
-  // .useStaticAssets(__dirname, {
-  //   dotfiles: 'allow',
-  // });
+    )
+    .useStaticAssets(__dirname, {
+      dotfiles: 'allow',
+    });
   await app.init();
 
   const configService: ConfigService = app.get('ConfigService');

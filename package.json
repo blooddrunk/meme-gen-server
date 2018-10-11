@@ -11,6 +11,7 @@
     "start:debug": "nodemon --config nodemon-debug.json",
     "prestart:prod": "rimraf dist && tsc && copyfiles -u 1 src/**/.env.* dist/",
     "start:prod": "cross-env NODE_ENV=production node dist/main.js",
+    "start:dist": "cross-env NODE_ENV=production node dist/main.js",
     "prestart:pm2": "rimraf dist && tsc && copyfiles -u 1 src/**/.env.* dist/",
     "start:pm2": "pm2 start process.yml",
     "start:hmr": "node dist/server",

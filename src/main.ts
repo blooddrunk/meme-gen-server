@@ -11,6 +11,7 @@ import * as express from 'express';
 import * as http from 'http';
 import * as https from 'https';
 import { ConfigService } from './config/config.service';
+import { join } from 'path';
 
 async function bootstrap() {
   const isHttpsEnabled = process.env.ENABLE_HTTPS === 'true';
@@ -28,7 +29,7 @@ async function bootstrap() {
       new TimeoutInterceptor(),
       // new TranformInterceptor(),
     )
-    .useStaticAssets(__dirname, {
+    .useStaticAssets(join(__dirname, 'public'), {
       dotfiles: 'allow',
     });
   await app.init();
